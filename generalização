@@ -1,0 +1,21 @@
+class Funcionario:
+    def __init__(self, nome, salario):
+        self.nome = nome
+        self.salario = salario
+
+    def calcular_bonus(self):
+        return self.salario * 0.1
+
+class Gerente(Funcionario):
+    def calcular_bonus(self):
+        return self.salario * 0.15
+
+class Analista(Funcionario):
+    pass
+
+# Utilização da generalização
+gerente = Gerente("João", 5000)
+analista = Analista("Maria", 3000)
+
+print(gerente.calcular_bonus())  # Saída: 750.0 (15% de 5000)
+print(analista.calcular_bonus())  # Saída: 300.0 (10% de 3000)
